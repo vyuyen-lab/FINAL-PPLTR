@@ -22,6 +22,12 @@ class Flight:
         if value < 0:
             raise ValueError("Số ghế không thể âm!")
         self._available_seats = value
+    
+
+    def book_seat(self):
+        if self.available_seats <= 0:
+            raise ValueError(f"Chuyến bay {self.flight_id} đã hết chỗ!")
+        self.available_seats -= 1
 
     def to_dict(self):
         return {
